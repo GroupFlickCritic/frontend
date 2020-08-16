@@ -12,7 +12,7 @@ class Home extends Component {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log({ poster: res });
+				console.log(res);
 			});
 	}
 
@@ -22,7 +22,7 @@ class Home extends Component {
 				<main>
 					{this.state.posters.map((poster) => {
 						return (
-							<Link to={'/info/'}>
+							<Link to={'/info:'}>
 								<img src=' ' />
 							</Link>
 						);
