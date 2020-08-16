@@ -4,7 +4,6 @@ class Nav extends Component {
     render() {
         return (
             <div>
-
             </div>
         );
     }
