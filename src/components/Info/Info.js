@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Reviews from './Reviews'
-import Form from './Form'
+// import Reviews from './Reviews'
+// import Form from './Form'
 
 
 class Info extends Component {
@@ -8,10 +8,10 @@ class Info extends Component {
     render() {
         return (
             <div>
-                <img></img>
+                {/* <img></img> */}
                 
-                <Reviews />
-                <Form />
+                {/* <Reviews /> */}
+                {/* <Form /> */}
             </div>
         );
     }
