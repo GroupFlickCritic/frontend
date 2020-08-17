@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
+const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 class Reviews extends React.Component {
     //constructor for user input from Form
     constructor(props) {
@@ -14,6 +15,22 @@ class Reviews extends React.Component {
             error: false,
         };
     }
+    componentDidMount(){
+        fetch(url1+ this.props.title).then((res)=>{
+            return res.json()
+        }).then((res)=>{
+            console.log(res[0])
+            let list = res[0].reviews.map((rev, index)=>{
+            return (
+							<ListGroup.Item key={index}>
+								"{rev.review}" <br/> - {rev.datePosted}
+							</ListGroup.Item>
+						);
+            });
+            this.setState({ reviewList: list });
+        })
+    }
+
     //find value in Form
     handleChange = (event) => {
         this.setState({ searchString: event.target.value });
@@ -26,42 +43,39 @@ class Reviews extends React.Component {
     };
 
     //fetch reviews and add searchString
-    getData(searchString) {
-        if (searchString) {
-            const url = 'https://flick-critic-db.herokuapp.com/api/movies';
-            fetch(url)
-                .then((res) => res.json())
-                .then((res) => {
-                    console.log(res.artObjects);
-                    this.setState({
-                        error: false,
-                        reviewList: res.artObjects,
-                        setSearch: true,
-                        searchString: '',
-                        lastSearch: this.state.searchString,
-                    });
-                })
-                .then((res) => {
-                    if (!this.state.reviewList.length) {
-                        this.setState({ error: true });
-                    }
-                })
-                .catch((err) => {
-                    console.error(err);
-                    this.setState({ error: true });
-                });
-        }
-    }
+    // getData(searchString) {
+    //     if (searchString) {
+    //         const url = 'https://flick-critic-db.herokuapp.com/api/movies';
+    //         fetch(url)
+    //             .then((res) => res.json())
+    //             .then((res) => {
+    //                 console.log(res.artObjects);
+    //                 this.setState({
+    //                     error: false,
+    //                     reviewList: res.artObjects,
+    //                     setSearch: true,
+    //                     searchString: '',
+    //                     lastSearch: this.state.searchString,
+    //                 });
+    //             })
+    //             .then((res) => {
+    //                 if (!this.state.reviewList.length) {
+    //                     this.setState({ error: true });
+    //                 }
+    //             })
+    //             .catch((err) => {
+    //                 console.error(err);
+    //                 this.setState({ error: true });
+    //             });
+    //     }
+    // }
 
     render() {
         return (
             <Container>
-                <Form />
+                
                 <ListGroup variant="flush">
-                    <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                    <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                    <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                   {this.state.reviewList}
                 </ListGroup>
             </Container>
         );
