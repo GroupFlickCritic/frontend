@@ -39,7 +39,7 @@ class Info extends Component {
 							<span className='detail'>Release Date:</span> {movie.movieInfo.releaseDate}{' '}
 						</p>
                         <Form title={movie.title}/>
-                        <Reviews title={movie.title}/>
+                        <Reviews title={movie.title} movie={movie}/>
 					</div>
 				);
 				console.log(movie);
