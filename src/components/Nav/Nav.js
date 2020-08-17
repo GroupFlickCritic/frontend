@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
-import About from "../About/About";
-import Home from "../Home/Home";
+import { Link } from "react-router-dom";
 
 
 class Nav extends Component {
     render() {
         return (
-            <div>
-                <nav>
-                    <h1>FlickCritic</h1>
-                    <Link to="/"> Home </Link>
-                    <Route exact path="/"
-                        component={Home}
-                    />
 
-                    <Link to="/about"> About </Link>
-                    <Route exact path="/about"
-                        component={About} />
-                </nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <Link to='/'>
+                    <a class="navbar-brand" href="#">FlickCritic</a>
+                </Link>
 
-            </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <Link to='/'>
+                            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        </Link>
+
+                        <Link to='/about'>
+                            <a class="nav-item nav-link" href="#">About</a>
+                            </Link>
+                        
+
+                    </div>
+                </div>
+
+            </nav>
+
+
         );
     }
 }
