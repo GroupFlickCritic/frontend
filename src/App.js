@@ -28,6 +28,20 @@ class App extends Component {
 		return (
 			<div>
 				<Nav />
+
+				<Route
+					path='/'
+					exact
+					render={() => {
+						return <Home movies={this.state.movies} />;
+					}}
+				/>
+				<Route
+					path='/about'
+					render={() => {
+						return <About />;
+					}}
+				/>
 				<Route
 					path='/info/:movie'
 					render={(routerProps) => {
@@ -36,10 +50,6 @@ class App extends Component {
 						);
 					}}
 				/>
-				<Route path='/' exact render={()=>{ return <Home movies={this.state.movies} /> }}/>
-        <Route path='/about' render={()=>{
-          return <About/>
-        }}/> 
 			</div>
 		);
 	}

@@ -9,7 +9,7 @@ class Home extends Component {
 		let movies = this.props.movies.map((movie, index) => {
 			return (
 				//we want the keys to be unique
-				<Link to={`/info:${movie.title}`} key={index + movie.title}>
+				<Link to={`/info/${movie.title}`} key={index + movie.title}>
 					<Card>
 						<Card.Img
 							variant='top'
