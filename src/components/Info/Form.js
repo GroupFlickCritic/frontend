@@ -2,6 +2,7 @@ import React from 'react';
 import { Form as Input } from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+//form for review and submit button
 const Form = ({ handleSubmit, handleChange, searchString }) => {
     return (
         <Input onSubmit={handleSubmit}>
