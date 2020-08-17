@@ -2,6 +2,8 @@ import React from 'react';
 import Form from './Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
+import Moment from 'moment';
+
 const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 class Reviews extends React.Component {
     //constructor for user input from Form
@@ -23,7 +25,10 @@ class Reviews extends React.Component {
             let list = res[0].reviews.map((rev, index)=>{
             return (
 							<ListGroup.Item key={index}>
-								"{rev.review}" <br/> - {rev.datePosted}
+								"{rev.review}" <br/> 
+                    {Moment(rev.datePosted).add(10, 'days').calendar()}
+                                
+                                
 							</ListGroup.Item>
 						);
             });
