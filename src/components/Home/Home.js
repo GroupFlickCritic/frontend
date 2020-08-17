@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card'
+import CardColumns from 'react-bootstrap/CardColumns';
+import Container from 'react-bootstrap/Container';
 class Home extends Component {
-	constructor() {
-		super();
-		this.state = {
-			posters: [],
-		};
-	}
-	componentDidMount() {
-		const url = `https://flick-critic-db.herokuapp.com/api/movies`;
-		fetch(url)
-			.then((res) => res.json())
-			.then((res) => {
-				console.log(res);
-			});
-	}
-
+	
 	render() {
+		let movies = this.props.movies.map((movie, index) => {
+			return (
+				//we want the keys to be unique
+				<Link to={`/info:${movie.title}`} key={index + movie.title}>
+					<Card>
+						<Card.Img
+							variant='top'
+							src={movie.mainImage}
+							alt={movie.title}
+							className='info'
+						/>
+					</Card>
+				</Link>
+			);
+		});
 		return (
-			<div>
-				<main>
-					{this.state.posters.map((poster) => {
-						return (
-							<Link to={'/info:'}>
-								<img src=' ' />
-							</Link>
-						);
-					})}
-				</main>
-			</div>
+			<Container>
+				<CardColumns>{movies}</CardColumns>
+			</Container>
 		);
 	}
 }
