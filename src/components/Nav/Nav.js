@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar"
+
 
 
 class Nav extends Component {
     render() {
         return (
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <Link to='/'>
-                    <a class="navbar-brand" href="#">FlickCritic</a>
-                </Link>
+            <Navbar bg="light" expand="lg">
+                <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    </Nav>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <Link to='/'>
-                            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                        </Link>
-
-                        <Link to='/about'>
-                            <a class="nav-item nav-link" href="#">About</a>
-                        </Link>
-
-
-                    </div>
-                </div>
-
-            </nav>
+                </Navbar.Collapse>
+            </Navbar>
 
 
         );
