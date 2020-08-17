@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
-import About from './components/About/About'
 import Nav from './components/Nav/Nav'
 import Info from './components/Info/Info'
 import Home from './components/Home/Home'
-
+import {Route} from 'react-router-dom'
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Nav/>
-        {/* <About /> */}
-        
-        <Info/>
-        <Home/>
+	constructor(props) {
+		super(props);
+		this.state = {
+      movies: [],
+    };
+	}
 
-      </div>
-    );
+	componentDidMount() {
+		const url = `https://flick-critic-db.herokuapp.com/api/movies`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+        console.log(res);
+        this.setState({movies: [...res]});
+			});
   }
+  
+	render() {
+		return (
+			<div>
+				<Nav />
+       
+				<Home exact movies={this.state.movies}/>
+			</div>
+		);
+	}
 }
 
 export default App;
