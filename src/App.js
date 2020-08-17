@@ -34,7 +34,7 @@ class App extends Component {
 						);
 					}}
 				/>
-				<Home exact movies={this.state.movies} />
+				<Route path='/' exact render={()=>{ return <Home movies={this.state.movies} /> }}/>
 			</div>
 		);
 	}
