@@ -26,8 +26,15 @@ class App extends Component {
 		return (
 			<div>
 				<Nav />
-       
-				<Home exact movies={this.state.movies}/>
+				<Route
+					path='/info/:movie'
+					render={(routerProps) => {
+						return (
+							<Info match={routerProps.match} movies={this.state.movies} />
+						);
+					}}
+				/>
+				<Home exact movies={this.state.movies} />
 			</div>
 		);
 	}
