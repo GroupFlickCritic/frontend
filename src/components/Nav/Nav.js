@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './Nav.css'
 import Navbar from "react-bootstrap/Navbar"
 import { Nav as ReactNav } from "react-bootstrap"
 
@@ -9,7 +9,7 @@ class Nav extends Component {
     render() {
         return (
 
-            <Navbar bg="light" expand="sm">
+            <Navbar className="navbar" expand="sm" >
                 <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
