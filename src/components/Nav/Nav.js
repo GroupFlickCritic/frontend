@@ -10,7 +10,7 @@ class Nav extends Component {
         return (
 
             <Navbar className="navbar" expand="sm" >
-                <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand href="/">flickcritic.</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <ReactNav className="mr-auto">
