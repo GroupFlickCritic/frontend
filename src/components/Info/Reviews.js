@@ -28,7 +28,7 @@ class Reviews extends React.Component {
     //fetch reviews and add searchString
     getData(searchString) {
         if (searchString) {
-            const url = `${this.props.searchOptions.url}/collection?key=${this.props.searchOptions.key}&q=${this.state.searchString}&ps=50`;
+            const url = 'https://flick-critic-db.herokuapp.com/api/movies';
             fetch(url)
                 .then((res) => res.json())
                 .then((res) => {
@@ -56,6 +56,7 @@ class Reviews extends React.Component {
     render() {
         return (
             <Container>
+                <Form />
                 <ListGroup variant="flush">
                     <ListGroup.Item>Cras justo odio</ListGroup.Item>
                     <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
