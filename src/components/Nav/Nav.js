@@ -23,8 +23,8 @@ class Nav extends Component {
 
                         <Link to='/about'>
                             <a class="nav-item nav-link" href="#">About</a>
-                            </Link>
-                        
+                        </Link>
+
 
                     </div>
                 </div>
