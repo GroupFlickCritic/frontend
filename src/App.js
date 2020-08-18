@@ -24,7 +24,9 @@ class App extends Component {
 			});
   }
   
-
+setNewMovies = (movies)=>{
+	this.setState({movies: movies});
+}
 	render() {
 		return (
 			<div>
@@ -47,7 +49,11 @@ class App extends Component {
 					path='/info/:movie'
 					render={(routerProps) => {
 						return (
-							<Info match={routerProps.match} movies={this.state.movies} />
+							<Info
+								match={routerProps.match}
+								movies={this.state.movies}
+								setNewMovies={this.setNewMovies}
+							/>
 						);
 					}}
 				/>

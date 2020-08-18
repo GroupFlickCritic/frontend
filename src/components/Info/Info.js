@@ -36,10 +36,15 @@ class Info extends Component {
 							<span className='detail'>Rated </span> {movie.movieInfo.rated}{' '}
 						</p>
 						<p>
-							<span className='detail'>Release Date:</span> {movie.movieInfo.releaseDate}{' '}
+							<span className='detail'>Release Date:</span>{' '}
+							{movie.movieInfo.releaseDate}{' '}
 						</p>
-                        <Form title={movie.title}/>
-                        <Reviews title={movie.title} movie={movie}/>
+						<Form
+							title={movie.title}
+							setNewMovies={this.props.setNewMovies}
+							movie={movie}
+						/>
+						<Reviews title={movie.title} movie={movie} />
 					</div>
 				);
 				console.log(movie);

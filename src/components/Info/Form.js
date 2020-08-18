@@ -3,7 +3,6 @@ import { Form as Input } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
-//form for review and submit button
 
 import axios from 'axios';
 let url = `https://flick-critic-db.herokuapp.com/api/movies/`;
@@ -18,17 +17,15 @@ class Form extends React.Component {
 
 
     handleSubmit = (event) => {
-        // event.preventDefault()
+        event.preventDefault()
         let newMovie = this.props.movie;
         //pushing a new object of the new review and datePosted
-        /**
-         * { review: theInputedReview, datePosted: Date.now()}
-         */
         newMovie.reviews.push(this.state);
         axios.put(url + this.props.title, newMovie).then((res)=>{
-            return res.data
-        }
-        )
+        this.props.setNewMovies(res.data);
+        }).then(()=>{
+			window.location.reload();
+		})
     }
 
     handleChange = (event) => this.setState({
@@ -50,8 +47,8 @@ class Form extends React.Component {
                                 type='text'
                                 name='searchString'
                                 required
-                                // onChange={handleChange}
-                                value={this.state.newReview.review}
+                                onChange={this.handleChange}
+                                value={this.state.review}
                                 rows='1'
                             />
                         </Input.Group>
