@@ -3,6 +3,7 @@ import { Form as Input } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
+import './Info.css'
 
 import axios from 'axios';
 let url = `https://flick-critic-db.herokuapp.com/api/movies/`;

@@ -4,6 +4,12 @@
 }
 
 .info{
-    background-color: #292929;
+    background-color: black;
     color:white
+}
+
+.btn-sm{
+    background-color:rgb(116, 252, 25);
+    color:black;
+    font-weight:bold
 }
