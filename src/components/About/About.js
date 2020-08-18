@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Card, Button, Jumbotron } from 'react-bootstrap';
+import { Accordion, Card, Jumbotron } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

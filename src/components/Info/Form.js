@@ -14,7 +14,7 @@ class Form extends React.Component{
         let newMovie = this.props.movie;
         //pushing a new object of the new review and datePosted
         /**
-         * { review: theInputedReview, datePosted: Date.now()}
+         * { review: theInputedReview, datePosted: new Date()}
          */
         newMovie.reviews.push();
         axios.put(url+ this.props.title,{
@@ -29,7 +29,7 @@ class Form extends React.Component{
 							<Row>
 								<Col>
 									<Input.Group>
-										<Input.Control
+										<Input.Control 
 											size='sm'
 											placeholder='Write your review here'
 											type='text'
