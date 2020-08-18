@@ -1,3 +1,11 @@
-.navbar{
-    background-color:blue
+.navbar,
+.navbar-default
+{
+    background-color:#505050;
+   
+    font-family: 'Inconsolata', monospace;
+}
+
+#link,#title{
+    color:white;
 }

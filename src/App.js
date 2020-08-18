@@ -29,7 +29,7 @@ setNewMovies = (movies)=>{
 }
 	render() {
 		return (
-			<div>
+			<div className='App'>
 				<Nav />
 
 				<Route

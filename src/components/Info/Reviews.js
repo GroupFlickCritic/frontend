@@ -1,8 +1,7 @@
 import React from 'react';
-import Form from './Form';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Container from 'react-bootstrap/Container';
+import { ListGroup, Container } from 'react-bootstrap';
 import Moment from 'moment';
+import './Reviews.css'
 
 const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 class Reviews extends React.Component {
@@ -50,7 +49,7 @@ class Reviews extends React.Component {
 
     render() {
         return (
-            <Container>
+            <Container id='reviews'>
                 
                 <ListGroup variant="flush">
                    {this.state.reviewList}

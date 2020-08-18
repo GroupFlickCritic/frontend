@@ -10,12 +10,12 @@ class Nav extends Component {
         return (
 
             <Navbar className="navbar" expand="sm" >
-                <Navbar.Brand href="/">flickcritic.</Navbar.Brand>
+                <Navbar.Brand id='title' href="/">flickcritic.</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <ReactNav className="mr-auto">
-                        <ReactNav.Link href="/">Home</ReactNav.Link>
-                        <ReactNav.Link href="/about">About</ReactNav.Link>
+                        <ReactNav.Link id='link' href="/">Home</ReactNav.Link>
+                        <ReactNav.Link id='link' href="/about">About</ReactNav.Link>
 
                     </ReactNav>
 

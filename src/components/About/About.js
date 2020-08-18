@@ -1,6 +1,7 @@
 import React from 'react';
 import { Accordion, Card, Button, Jumbotron } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './About.css'
 
 
 function About() {
@@ -9,7 +10,7 @@ function About() {
 	}
 
 	return (
-		<Jumbotron className='About'>
+		<Jumbotron className='about'>
 			<h1>MEET OUR TEAM</h1>
 			<p>
 				We all are very different. We come from different backgrounds. We were
