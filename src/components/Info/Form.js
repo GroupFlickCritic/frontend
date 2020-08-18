@@ -7,50 +7,65 @@ import Col from 'react-bootstrap/Col';
 
 import axios from 'axios';
 let url = `https://flick-critic-db.herokuapp.com/api/movies/`;
-class Form extends React.Component{
+class Form extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            datePosted: '',
+            review: ''
+        }
+    }
 
 
-    handleSubmit = ()=>{
+    handleSubmit = (event) => {
+        // event.preventDefault()
         let newMovie = this.props.movie;
         //pushing a new object of the new review and datePosted
         /**
          * { review: theInputedReview, datePosted: Date.now()}
          */
-        newMovie.reviews.push();
-        axios.put(url+ this.props.title,{
-
-        } ).then()
+        newMovie.reviews.push(this.state);
+        axios.put(url + this.props.title, newMovie).then((res)=>{
+            return res.data
+        }
+        )
     }
 
+    handleChange = (event) => this.setState({
+        review: event.target.value,
+        datePosted: new Date()
+    })
 
-    render(){
-         return (
-						<Input onSubmit={this.handleSubmit}>
-							<Row>
-								<Col>
-									<Input.Group>
-										<Input.Control
-											size='sm'
-											placeholder='Write your review here'
-											type='text'
-											name='searchString'
-											required
-											// onChange={handleChange}
-											// value={searchString}
-											rows='1'
-										/>
-									</Input.Group>
-								</Col>
-								<Col>
-									<Button type='submit' variant='dark' className='btn-sm'>
-										Submit
+
+
+    render() {
+        return (
+            <Input onSubmit={this.handleSubmit}>
+                <Row>
+                    <Col>
+                        <Input.Group>
+                            <Input.Control
+                                size='sm'
+                                placeholder='Write your review here'
+                                type='text'
+                                name='searchString'
+                                required
+                                // onChange={handleChange}
+                                value={this.state.newReview.review}
+                                rows='1'
+                            />
+                        </Input.Group>
+                    </Col>
+                    <Col>
+                        <Button type='submit' variant='dark' className='btn-sm'>
+                            Submit
 									</Button>
-								</Col>
-							</Row>
-						</Input>
-					);
+                    </Col>
+                </Row>
+            </Input>
+        );
     }
-   
+
 }
 
 export default Form;
