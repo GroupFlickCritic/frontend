@@ -13,3 +13,13 @@
     color:black;
     font-weight:bold
 }
+
+#movieTitle{
+    color:#25B90B;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.detail{
+    text-decoration: underline;
+}

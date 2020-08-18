@@ -22,8 +22,8 @@ class Info extends Component {
 					<div>
 						<Image fluid src={movie.infoImage} alt={movie.title} />
 						<div className="movieInfo">
-							<h3>{movie.title}</h3>
-							<h6>Summary</h6>
+							<h3 id="movieTitle">{movie.title}</h3>
+							<h6 className="detail">Summary:</h6>
 							<p>{movie.movieInfo.summary}</p>
 							<p>
 								<span className='detail'>Director:</span>{' '}
@@ -36,7 +36,7 @@ class Info extends Component {
 								<span className='detail'>Genres:</span> {movie.movieInfo.genres}{' '}
 							</p>
 							<p>
-								<span className='detail'>Rated </span> {movie.movieInfo.rated}{' '}
+								<span className='detail'>Rated:</span> {movie.movieInfo.rated}{' '}
 							</p>
 							<p>
 								<span className='detail'>Release Date:</span>{' '}

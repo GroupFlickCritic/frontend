@@ -11,7 +11,7 @@ class Home extends Component {
 				//we want the keys to be unique
 
 				<Link to={`/info/${movie.title}`} key={index + movie.title}>
-					<Card>
+					<Card className='card'>
 						<Card.Img
 							variant='top'
 							src={movie.mainImage}
