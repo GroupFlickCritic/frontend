@@ -23,7 +23,7 @@ class Reviews extends React.Component {
             console.log(res[0])
             let list = res[0].reviews.map((rev, index)=>{
             return (
-							<ListGroup.Item key={index}>
+                <ListGroup.Item id='reviews' key={index}>
 								"{rev.review}" <br/> 
                     {Moment(rev.datePosted).add(10, 'days').calendar()}
                                 
@@ -51,7 +51,7 @@ class Reviews extends React.Component {
         return (
             <Container id='reviews'>
                 
-                <ListGroup variant="flush">
+                <ListGroup id='reviews' variant="flush">
                    {this.state.reviewList}
                 </ListGroup>
             </Container>
