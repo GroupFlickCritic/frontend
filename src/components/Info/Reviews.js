@@ -2,17 +2,18 @@ import React from 'react';
 import { ListGroup, Container } from 'react-bootstrap';
 import Moment from 'moment';
 import './Reviews.css';
-
 const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 const url2 = 'https://flick-critic-db.herokuapp.com/api/reviews/';
+let newer;
 class Reviews extends React.Component {
 	//constructor for user input from Form
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchString: '',
-			lastSearch: '',
-			reviewList: '',
+            movie: '',
+            brandNew: '',
+			reviews: '',
+			reviewList: [],
 			setSearch: false,
 			error: false,
 		};
@@ -23,18 +24,22 @@ class Reviews extends React.Component {
 				return res.json();
 			})
 			.then((res) => {
-				console.log(res[0]);
-				let list = res[0].reviews.map((rev, index) => {
-					fetch(url2 + rev).then((rev) => {
-						return (
-							<ListGroup.Item id='reviews' key={index}>
-								"{rev.review}" <br />
-								{Moment(rev.datePosted).add(10, 'days').calendar()}
-							</ListGroup.Item>
-						);
-					});
-				});
-				this.setState({ reviewList: list });
+				this.setState({ movie: res[0] });
+			})
+			.then(() => {
+				this.state.movie.reviews.forEach((rev, index) => {
+
+                    
+					fetch(url2 + rev)
+						.then((res) => {
+							return res.json();
+						})
+						.then((rev) => {
+                            this.setState({reviewList: [...this.state.reviewList, rev],})
+                            console.log(rev);
+                        newer = <li>{rev.review}</li>
+						});
+                });
 			});
 	}
 
@@ -50,10 +55,18 @@ class Reviews extends React.Component {
 	};
 
 	render() {
+        let newRevs = this.state.reviewList.map((review, index) => {
+					console.log(review);
+                    return  <ListGroup.Item id='reviews' key={index}>
+                                "{review.review}" <br />
+                                {Moment(review.datePosted).add(1, 'days').format('L')}
+                            </ListGroup.Item>;
+                });
+                console.log(newRevs)
 		return (
 			<Container id='reviews'>
 				<ListGroup id='reviews' variant='flush'>
-					{this.state.reviewList}
+					{newRevs}
 				</ListGroup>
 			</Container>
 		);

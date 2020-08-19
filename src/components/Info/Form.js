@@ -6,7 +6,8 @@ import Col from 'react-bootstrap/Col';
 import './Info.css'
 
 import axios from 'axios';
-let url = `https://flick-critic-db.herokuapp.com/api/movies/`;
+let url = `https://flick-critic-db.herokuapp.com/api/reviews/`;
+let url2 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 class Form extends React.Component {
     constructor(props) {
         super(props)
@@ -22,10 +23,13 @@ class Form extends React.Component {
         let newMovie = this.props.movie;
         //pushing a new object of the new review and datePosted
         newMovie.reviews.push(this.state);
-        axios.put(url + this.props.title, newMovie).then((res)=>{
-        this.props.setNewMovies(res.data);
-        }).then(()=>{
-			window.location.reload();
+        axios.post(url, this.state).then((res)=>{
+        return res.data;
+        }).then((review)=>{
+            axios.put(`${url2}/${this.props.movie._id}/${review._id}`).then((res)=>{
+                window.location.reload();
+            })
+			
 		})
     }
 
