@@ -9,6 +9,7 @@ class Item extends Component {
 		super(props);
 		this.state = {
 			editClicked: true,
+
 			updatedReview: {
 				review: this.props.review,
 				datePosted: '',
@@ -19,6 +20,7 @@ class Item extends Component {
 		event.preventDefault();
 		this.setState({ editClicked: false });
 	};
+
 	handleChange = (event) =>{
         event.preventDefault()
 		this.setState({
@@ -27,10 +29,10 @@ class Item extends Component {
 				datePosted: new Date(),
 			},
         });
-
         //  this.props.review = this.state.updatedReview.review
-    }
-
+	}
+	
+	
 	handleSubmit = (event) => {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
@@ -68,14 +70,25 @@ class Item extends Component {
 			</Input>
 		);
 	};
+	
+	
+
+
 	render() {
 		return this.state.editClicked ? (
 			<ListGroup.Item id='reviews'>
 				"{this.props.review}" <br />
+				
 				{Moment(this.props.datePosted).add(1, 'days').format('L')}{' '}
+			
 				<span className='edit' onClick={this.handleEdit}>
 					edit
+				</span>{' '}
+
+				<span className='delete' onClick={this.handleDelete}>
+					delete
 				</span>
+
 			</ListGroup.Item>
 		) : (
 			this.editForm()
