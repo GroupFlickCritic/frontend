@@ -118,9 +118,7 @@ class Item extends Component {
 				<span className='delete' onClick={this.handleDelete}>
 					delete
 				</span>
-				<span className='edit' onClick={this.handleDelete}>
-					Delete
-				</span>
+				
 			</ListGroup.Item>
 		) : (
 			this.editForm()
