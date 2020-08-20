@@ -29,19 +29,11 @@ class Item extends Component {
 				review: `${event.target.value}`,
 				datePosted: new Date(),
 			},
-<<<<<<< HEAD
 		});
 
 		//  this.props.review = this.state.updatedReview.review
 	};
 
-=======
-        });
-        //  this.props.review = this.state.updatedReview.review
-	}
-	
-	
->>>>>>> readme
 	handleSubmit = (event) => {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
@@ -126,13 +118,9 @@ class Item extends Component {
 				<span className='delete' onClick={this.handleDelete}>
 					delete
 				</span>
-<<<<<<< HEAD
 				<span className='edit' onClick={this.handleDelete}>
 					Delete
 				</span>
-=======
-
->>>>>>> readme
 			</ListGroup.Item>
 		) : (
 			this.editForm()
