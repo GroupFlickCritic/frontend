@@ -74,9 +74,8 @@ class Reviews extends React.Component {
         }
 		return (
 			<Container id='reviews'>
-				<ListGroup id='reviews' variant='flush'>
-					{newRevs}
-				</ListGroup>
+				<h4 className='reviews-head'>Critic Reviews</h4>
+				<ListGroup variant='flush'>{newRevs}</ListGroup>
 			</Container>
 		);
 	}

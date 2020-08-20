@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ListGroup, Button, Row, Col } from 'react-bootstrap';
 import Moment from 'moment';
 import { Form as Input } from 'react-bootstrap';
+import './Item.css'
 import axios from 'axios'
 let url = 'https://flick-critic-db.herokuapp.com/api/reviews/';
 // let url = 'http://localhost:4040/api/reviews/';
@@ -106,8 +107,8 @@ class Item extends Component {
 				<span className='edit' onClick={this.handleEdit}>
 					edit
 				</span>
-				<span className='edit' onClick={this.handleDelete}>
-					Delete
+				<span className='delete' onClick={this.handleDelete}>
+					delete
 				</span>
 			</ListGroup.Item>
 		) : (

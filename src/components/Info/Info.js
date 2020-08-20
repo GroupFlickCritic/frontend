@@ -19,41 +19,46 @@ class Info extends Component {
 			.then((res) => res.data[0])
 			.then((movie) => {
 				let display = (
-					<div id="allInfo">
-
-						<Image src={movie.infoImage} alt={movie.title} id="infoImage" />
-						<div className="movieInfo">
-							<h3 className="detail" id="movieTitle">{movie.title}</h3>
-							<h6 className="detail">Summary:</h6>
-							<p>{movie.movieInfo.summary}</p>
-							<p>
-								<span className='detail'>Director:</span>{' '}
-								{movie.movieInfo.director}{' '}
-							</p>
-							<p>
-								<span className='detail'>Writers:</span> {movie.movieInfo.writers}{' '}
-							</p>
-							<p>
-								<span className='detail'>Genres:</span> {movie.movieInfo.genres}{' '}
-							</p>
-							<p>
-								<span className='detail'>Rated:</span> {movie.movieInfo.rated}{' '}
-							</p>
-							<p>
-								<span className='detail'>Release Date:</span>{' '}
-								{movie.movieInfo.releaseDate}{' '}
-							</p>
-
+					<div id='allInfo'>
+						<div className='top-contents'>
+							<Image src={movie.infoImage} alt={movie.title} id='infoImage' />
+							<div className='movieInfo'>
+								<h3 className='detail' id='movieTitle'>
+									{movie.title}
+								</h3>
+								<h6 className='detail'>Summary:</h6>
+								<p>{movie.movieInfo.summary}</p>
+								<p>
+									<span className='detail'>Director:</span>{' '}
+									{movie.movieInfo.director}{' '}
+								</p>
+								<p>
+									<span className='detail'>Writers:</span>{' '}
+									{movie.movieInfo.writers}{' '}
+								</p>
+								<p>
+									<span className='detail'>Genres:</span>{' '}
+									{movie.movieInfo.genres}{' '}
+								</p>
+								<p>
+									<span className='detail'>Rated:</span> {movie.movieInfo.rated}{' '}
+								</p>
+								<p>
+									<span className='detail'>Release Date:</span>{' '}
+									{movie.movieInfo.releaseDate}{' '}
+								</p>
+							</div>
 						</div>
-						<Reviews title={movie.title} movie={movie} 
-						id = 'reviews'/>
-						<Form
-							title={movie.title}
-							setNewMovies={this.props.setNewMovies}
-							movie={movie}
-							id='form'
-						/>
-
+						<div className='bottom-contents'>
+							<Reviews title={movie.title} movie={movie} />
+							<div className='new-review'>
+								<Form
+									title={movie.title}
+									setNewMovies={this.props.setNewMovies}
+									movie={movie}
+								/>
+							</div>
+						</div>
 					</div>
 				);
 				console.log(movie);
@@ -64,7 +69,7 @@ class Info extends Component {
 	render() {
 		return (
 			<Container className='info'>
-
+				
 				{this.state.movieInfo}
 			</Container>
 		);
