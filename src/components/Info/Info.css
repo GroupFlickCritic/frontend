@@ -1,25 +1,35 @@
-.movieInfo{
-    font-family: 'Roboto', sans-serif;
-   
+.movieInfo {
+	font-family: 'Roboto', sans-serif;
+}
+#infoImage {
+ /* height: 25rem; */
+ margin: auto;
+  
+}
+#container{
+    display:flex;
+    
+}
+.info {
+    color: white;
+    
+    flex-direction: column;
+    
+	
 }
 
-.info{
-    background-color: black;
-    color:white
+.btn-sm {
+	background-color: rgb(116, 252, 25);
+	color: black;
+	font-weight: bold;
 }
 
-.btn-sm{
-    background-color:rgb(116, 252, 25);
-    color:black;
-    font-weight:bold
+#movieTitle {
+	color: #25b90b;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
-#movieTitle{
-    color:#25B90B;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.detail{
-    text-decoration: underline;
+.detail {
+	text-decoration: underline;
 }

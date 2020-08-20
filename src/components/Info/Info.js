@@ -19,8 +19,9 @@ class Info extends Component {
 			.then((res) => res.data[0])
 			.then((movie) => {
 				let display = (
-					<div>
-						<Image fluid src={movie.infoImage} alt={movie.title} />
+					<div id="allInfo">
+						<div id="container">
+						<Image fluid src={movie.infoImage} alt={movie.title} id="infoImage"/>
 						<div className="movieInfo">
 							<h3 id="movieTitle">{movie.title}</h3>
 							<h6 className="detail">Summary:</h6>
@@ -43,7 +44,7 @@ class Info extends Component {
 								{movie.movieInfo.releaseDate}{' '}
 							</p>
 						</div>
-
+						</div>
 						<Form
 							title={movie.title}
 							setNewMovies={this.props.setNewMovies}
@@ -54,6 +55,7 @@ class Info extends Component {
 				);
 				console.log(movie);
 				this.setState({ movieInfo: display });
+
 			});
 	}
 	render() {

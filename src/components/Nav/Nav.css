@@ -1,11 +1,12 @@
 .navbar,
-.navbar-default
-{
-    background-color:#505050;
-   
-    font-family: 'Inconsolata', monospace;
+.navbar-default {
+	background-color: #505050;
+
+	font-family: 'Inconsolata', monospace;
 }
 
-#link,#title{
-    color:rgb(116, 252, 25);
+#link,
+#title {
+    background-color: #505050;
+	color: rgb(116, 252, 25);
 }
