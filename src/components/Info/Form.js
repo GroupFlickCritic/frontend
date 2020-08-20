@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form as Input } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import './Form.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import './Info.css'
@@ -40,32 +41,26 @@ class Form extends React.Component {
 
     render() {
         return (
-            <Input onSubmit={this.handleSubmit}>
-                <Row>
-                    {/* <Col> */}
-                        <Input.Group>
-                            <Input.Control
-                                size='sm'
-                                as='textarea'
-                                placeholder='Write your review here'
-                                type='text'
-                                name='searchString'
-                                required
-                                onChange={this.handleChange}
-                                value={this.state.review}
-                                rows='5'
-                            />
-                            <Button type='submit' variant='dark' className='btn-sm'>
-                            Submit
-									</Button>
-                        </Input.Group>
-                    {/* </Col> */}
-                    <Col>
-                        
-                    </Col>
-                </Row>
-            </Input>
-        );
+					<Input onSubmit={this.handleSubmit} id='form'>
+						
+							<Input.Group className='form'>
+								<Input.Control
+									id='input'
+									as='textarea'
+									placeholder='Write your review here'
+									type='text'
+									name='searchString'
+									required
+									onChange={this.handleChange}
+									value={this.state.review}
+									rows='5'
+								/>
+								<Button type='submit' variant='dark' className='btn-sm' id='submit-button'>
+									Submit
+								</Button>
+							</Input.Group>
+					</Input>
+				);
     }
 
 }

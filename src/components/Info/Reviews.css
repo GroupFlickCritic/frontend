@@ -1,9 +1,12 @@
 #reviews{
+    width: 100%;
     background: black;
-    font-family: 'Playfair Display', serif;
-    color:white
+    font-size: x-large;
 }
 
-.edit{
+.edit, .delete{
     margin-left: 30px;
+}
+.reviews-head{
+    color: #25b90b;
 }

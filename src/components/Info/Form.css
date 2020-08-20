@@ -1,0 +1,25 @@
+#input{
+    width: 75%;
+    margin-left: 5%;
+
+
+}
+#form{
+    text-align: center;
+}
+#submit-button{
+    margin-right: -217px;
+    height: 40px;
+    width: 80px;
+}
+@media(max-width: 600px){
+  #input{
+      width:60%;
+  }
+  #submit-button{
+    margin-right: -70px;
+    height: 40px;
+    width: 80px;
+}
+
+}
