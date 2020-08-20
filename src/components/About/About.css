@@ -1,6 +1,13 @@
 .about{
     background-color: black;
-    color: white
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+p{
+    text-align: left;
+    font-size: 20px;
 }
 .header{
     background-color: #505050;

@@ -11,7 +11,7 @@ function About() {
 	return (
 		<Jumbotron className='about'>
 			<h1>MEET OUR TEAM</h1>
-			<p>
+			<p >
 				We all are very different. We come from different backgrounds. We were
 				born in different cities, at a different time. We have different
 				hobbies, and interests. Although we may be different, what connects us
