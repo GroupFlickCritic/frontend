@@ -2,3 +2,21 @@
     background-color: black;
     color: white
 }
+.header{
+    background-color: #505050;
+}
+
+.contactUs{
+    background-color: #343434;
+    color:white;
+}
+
+.body{
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+}
+
+/* .groupInfo{
+    tex
+} */
