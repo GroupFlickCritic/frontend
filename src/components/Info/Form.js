@@ -42,24 +42,26 @@ class Form extends React.Component {
         return (
             <Input onSubmit={this.handleSubmit}>
                 <Row>
-                    <Col>
+                    {/* <Col> */}
                         <Input.Group>
                             <Input.Control
                                 size='sm'
+                                as='textarea'
                                 placeholder='Write your review here'
                                 type='text'
                                 name='searchString'
                                 required
                                 onChange={this.handleChange}
                                 value={this.state.review}
-                                rows='1'
+                                rows='5'
                             />
-                        </Input.Group>
-                    </Col>
-                    <Col>
-                        <Button type='submit' variant='dark' className='btn-sm'>
+                            <Button type='submit' variant='dark' className='btn-sm'>
                             Submit
 									</Button>
+                        </Input.Group>
+                    {/* </Col> */}
+                    <Col>
+                        
                     </Col>
                 </Row>
             </Input>

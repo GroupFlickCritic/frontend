@@ -20,10 +20,10 @@ class Info extends Component {
 			.then((movie) => {
 				let display = (
 					<div id="allInfo">
-						<div id="container">
-						<Image fluid src={movie.infoImage} alt={movie.title} id="infoImage"/>
+
+						<Image src={movie.infoImage} alt={movie.title} id="infoImage" />
 						<div className="movieInfo">
-							<h3 id="movieTitle">{movie.title}</h3>
+							<h3 className="detail" id="movieTitle">{movie.title}</h3>
 							<h6 className="detail">Summary:</h6>
 							<p>{movie.movieInfo.summary}</p>
 							<p>
@@ -43,14 +43,17 @@ class Info extends Component {
 								<span className='detail'>Release Date:</span>{' '}
 								{movie.movieInfo.releaseDate}{' '}
 							</p>
+
 						</div>
-						</div>
+						<Reviews title={movie.title} movie={movie} 
+						id = 'reviews'/>
 						<Form
 							title={movie.title}
 							setNewMovies={this.props.setNewMovies}
 							movie={movie}
+							id='form'
 						/>
-						<Reviews title={movie.title} movie={movie} />
+
 					</div>
 				);
 				console.log(movie);
