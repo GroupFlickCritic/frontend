@@ -20,9 +20,7 @@ class Form extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        let newMovie = this.props.movie;
         //pushing a new object of the new review and datePosted
-        newMovie.reviews.push(this.state);
         axios.post(url, this.state).then((res)=>{
         return res.data;
         }).then((review)=>{
