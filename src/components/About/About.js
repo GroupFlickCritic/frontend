@@ -35,7 +35,7 @@ function About() {
 						<Card.Body className='body'>
 							<CardImg fluid src='/images/groupPic.png' alt='GroupPic' />
 							<h6>(clockwise order)</h6>
-							<div class='groupInfo'>
+							<div className='groupInfo'>
 								<h3>Jason Choi</h3>
 								<a
 									href='https://github.com/Choiboi500'
