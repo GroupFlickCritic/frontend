@@ -5,7 +5,7 @@ import { Form as Input } from 'react-bootstrap';
 import './Item.css'
 import axios from 'axios'
 let url = 'https://flick-critic-db.herokuapp.com/api/reviews/';
-// let url = 'http://localhost:4040/api/reviews/';
+
 class Item extends Component {
 	constructor(props) {
 		super(props);
@@ -31,8 +31,6 @@ class Item extends Component {
 				datePosted: new Date(),
 			},
 		});
-
-		//  this.props.review = this.state.updatedReview.review
 	};
 
 	handleSubmit = (event) => {

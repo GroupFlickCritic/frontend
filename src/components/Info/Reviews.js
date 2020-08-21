@@ -6,14 +6,12 @@ const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 const url2 = 'https://flick-critic-db.herokuapp.com/api/reviews/';
 
 class Reviews extends React.Component {
-	//constructor for user input from Form
 	constructor(props) {
 		super(props);
 		this.state = {
 			movie: '',
 			reviewList: [],
 			editClicked: true,
-			error: false,
 		};
 	}
 	componentDidMount() {
@@ -26,25 +24,26 @@ class Reviews extends React.Component {
 			})
 			.then(() => {
 				this.state.movie.reviews.forEach((rev, index) => {
-					fetch(url2 + rev)
-						.then((res) => {
-							return res.json();
-						})
-						.then((rev) => {
-							this.setState({ reviewList: [...this.state.reviewList, rev] });
-						});
+					if(rev){
+						fetch(url2 + rev)
+							.then((res) => {
+								return res.json();
+							})
+							.then((rev) => {
+								this.setState({ reviewList: [...this.state.reviewList, rev] });
+							});
+					}
+					
 				});
 			});
 	}
 
 	
 
-	//find value in Form
 	handleChange = (event) => {
 		this.setState({ searchString: event.target.value });
 	};
 
-	//submit value in Form
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.getData(this.state.searchString);
@@ -53,7 +52,6 @@ class Reviews extends React.Component {
 	
 	render() {
 		let newRevs = this.state.reviewList.map((review, index) => {
-			// console.log(review);
             if(review){
                 	return <Item key={index} review={review.review} datePosted={review.datePosted} id={review._id} movieId={this.state.movie._id} movie={this.state.movie}/>
             }else{
