@@ -60,7 +60,6 @@ class Reviews extends React.Component {
                 return;
             }
 		
-
 			
 		});
         
