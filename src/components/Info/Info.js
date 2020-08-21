@@ -61,7 +61,6 @@ class Info extends Component {
 						</div>
 					</div>
 				);
-				console.log(movie);
 				this.setState({ movieInfo: display });
 
 			});

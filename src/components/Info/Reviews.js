@@ -1,7 +1,5 @@
 import React from 'react';
 import { ListGroup, Container } from 'react-bootstrap';
-
-import { Row, Col, Button } from 'react-bootstrap';
 import Item from './Item';
 import './Reviews.css';
 const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
@@ -33,9 +31,7 @@ class Reviews extends React.Component {
 							return res.json();
 						})
 						.then((rev) => {
-                            console.log(rev);
 							this.setState({ reviewList: [...this.state.reviewList, rev] });
-							console.log(rev);
 						});
 				});
 			});

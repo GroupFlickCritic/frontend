@@ -2,3 +2,8 @@
     color: #25b90b;
     cursor: pointer;
 }
+
+#edit-box{
+    height: 70px;
+    width: 140%;
+}

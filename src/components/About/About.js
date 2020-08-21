@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Card, Jumbotron, CardImg, PageItem } from 'react-bootstrap';
+import { Accordion, Card, Jumbotron, CardImg} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './About.css';
 
@@ -11,7 +11,7 @@ function About() {
 	return (
 		<Jumbotron className='about'>
 			<h1>MEET OUR TEAM</h1>
-			<p >
+			<p>
 				We all are very different. We come from different backgrounds. We were
 				born in different cities, at a different time. We have different
 				hobbies, and interests. Although we may be different, what connects us
@@ -34,46 +34,62 @@ function About() {
 					<Accordion.Collapse eventKey='0'>
 						<Card.Body className='body'>
 							<CardImg fluid src='/images/groupPic.png' alt='GroupPic' />
-							<div class="groupInfo">
+							<div class='groupInfo'>
 								<h3>Alisha Lawani</h3>
-								<a href='https://github.com/alishalawani' target='_blank'>
+								<a
+									href='https://github.com/alishalawani'
+									rel='noopener noreferrer'
+									target='_blank'>
 									<h6>Github</h6>
 								</a>
 								<a
 									href='https://www.linkedin.com/in/alishalawani/'
+									rel='noopener noreferrer'
 									target='_blank'>
 									<h6>LinkedIn</h6>
 								</a>
 							</div>
-							<div class="groupInfo">
+							<div class='groupInfo'>
 								<h3>David Sams</h3>
-								<a href='https://github.com/davidedsams' target='_blank'>
+								<a
+									href='https://github.com/davidedsams'
+									rel='noopener noreferrer'
+									target='_blank'>
 									<h6>Github</h6>
 								</a>
 								<a
 									href='https://www.linkedin.com/in/davidedwardsams'
+									rel='noopener noreferrer'
 									target='_blank'>
 									<h6>LinkedIn</h6>
 								</a>
 							</div>
-							<div class="groupInfo">
+							<div class='groupInfo'>
 								<h3>Roshonia Brooks</h3>
-								<a href='https://github.com/RoshoniaB' target='_blank'>
+								<a
+									href='https://github.com/RoshoniaB'
+									rel='noopener noreferrer'
+									target='_blank'>
 									<h6>Github</h6>
 								</a>
 								<a
 									href='https://www.linkedin.com/in/roshonia-brooks'
+									rel='noopener noreferrer'
 									target='_blank'>
 									<h6>LinkedIn</h6>
 								</a>
 							</div>
-							<div class="groupInfo">
+							<div class='groupInfo'>
 								<h3>Jason Choi</h3>
-								<a href='https://github.com/Choiboi500' target='_blank'>
+								<a
+									href='https://github.com/Choiboi500'
+									rel='noopener noreferrer'
+									target='_blank'>
 									<h6>Github</h6>
 								</a>
 								<a
 									href='https://www.linkedin.com/in/jason-choi-347855b4/'
+									rel='noopener noreferrer'
 									target='_blank'>
 									<h6>LinkedIn</h6>
 								</a>

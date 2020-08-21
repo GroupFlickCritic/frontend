@@ -19,7 +19,6 @@ class App extends Component {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-        console.log(res);
         this.setState({movies: [...res]});
 			});
   }

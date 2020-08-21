@@ -60,18 +60,6 @@ class Item extends Component {
             window.location.reload();
         })
     }
-
-	// handleDelete = (e) => {
-	// 	e.preventDefault()
-	// 		deleted = true
-	// 		axios.delete(url + this.props.id).then((res) =>{
-				
-	// 			window.location.reload()
-	// 		})
-	// 		.catch(err=>{
-	// 			console.log(err)
-	// 		})
-	// 	};
 	
 
 	editForm = () => {
@@ -81,8 +69,9 @@ class Item extends Component {
 					<Col>
 						<Input.Group>
 							<Input.Control
-								size='sm'
-								placeholder='Write your review here'
+								size='md'
+								id='edit-box'
+								as='textarea'
 								type='text'
 								name='searchString'
 								required

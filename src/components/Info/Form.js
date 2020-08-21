@@ -2,8 +2,6 @@ import React from 'react';
 import { Form as Input } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import './Form.css'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col';
 import './Info.css'
 
 import axios from 'axios';
