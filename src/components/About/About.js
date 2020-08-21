@@ -41,13 +41,13 @@ function About() {
 									href='https://github.com/Choiboi500'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>Github</h6>
+									<CardImg className='github' src='images/github.png' />
 								</a>
 								<a
 									href='https://www.linkedin.com/in/jason-choi-347855b4/'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>LinkedIn</h6>
+									<CardImg className='linkedin' src='images/linkedin.jpg' />
 								</a>
 							</div>
 							<div class='groupInfo'>
@@ -56,13 +56,13 @@ function About() {
 									href='https://github.com/alishalawani'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>Github</h6>
+									<CardImg className='github' src='images/github.png' />
 								</a>
 								<a
 									href='https://www.linkedin.com/in/alishalawani/'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>LinkedIn</h6>
+									<CardImg className='linkedin' src='images/linkedin.jpg' />
 								</a>
 							</div>
 							<div class='groupInfo'>
@@ -71,13 +71,13 @@ function About() {
 									href='https://github.com/davidedsams'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>Github</h6>
+									<CardImg className='github' src='images/github.png' />
 								</a>
 								<a
 									href='https://www.linkedin.com/in/davidedwardsams'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>LinkedIn</h6>
+									<CardImg className='linkedin' src='images/linkedin.jpg' />
 								</a>
 							</div>
 							<div class='groupInfo'>
@@ -86,16 +86,15 @@ function About() {
 									href='https://github.com/RoshoniaB'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>Github</h6>
+									<CardImg className='github' src='images/github.png' />
 								</a>
 								<a
 									href='https://www.linkedin.com/in/roshonia-brooks'
 									rel='noopener noreferrer'
 									target='_blank'>
-									<h6>LinkedIn</h6>
+									<CardImg className='linkedin' src='images/linkedin.jpg' />
 								</a>
 							</div>
-
 						</Card.Body>
 					</Accordion.Collapse>
 				</Card>
