@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Card, Jumbotron, CardImg} from 'react-bootstrap';
+import { Accordion, Card, Jumbotron, CardImg } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './About.css';
 
@@ -34,6 +34,22 @@ function About() {
 					<Accordion.Collapse eventKey='0'>
 						<Card.Body className='body'>
 							<CardImg fluid src='/images/groupPic.png' alt='GroupPic' />
+							<h6>(clockwise order)</h6>
+							<div class='groupInfo'>
+								<h3>Jason Choi</h3>
+								<a
+									href='https://github.com/Choiboi500'
+									rel='noopener noreferrer'
+									target='_blank'>
+									<h6>Github</h6>
+								</a>
+								<a
+									href='https://www.linkedin.com/in/jason-choi-347855b4/'
+									rel='noopener noreferrer'
+									target='_blank'>
+									<h6>LinkedIn</h6>
+								</a>
+							</div>
 							<div class='groupInfo'>
 								<h3>Alisha Lawani</h3>
 								<a
@@ -79,21 +95,7 @@ function About() {
 									<h6>LinkedIn</h6>
 								</a>
 							</div>
-							<div class='groupInfo'>
-								<h3>Jason Choi</h3>
-								<a
-									href='https://github.com/Choiboi500'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<h6>Github</h6>
-								</a>
-								<a
-									href='https://www.linkedin.com/in/jason-choi-347855b4/'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<h6>LinkedIn</h6>
-								</a>
-							</div>
+
 						</Card.Body>
 					</Accordion.Collapse>
 				</Card>
