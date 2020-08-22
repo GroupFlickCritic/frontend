@@ -1,12 +1,13 @@
-#reviews{
-    width: 100%;
-    background: black;
-    font-size: x-large;
+#reviews {
+	width: 100%;
+	background: black;
+	font-size: x-large;
 }
 
-.edit, .delete{
-    margin-left: 30px;
+.edit,
+.delete {
+	margin-left: 30px;
 }
-.reviews-head{
-    color: #25b90b;
+.reviews-head {
+	color: #25b90b;
 }

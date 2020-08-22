@@ -1,34 +1,34 @@
-.about{
-    background-color: black;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    margin: 50px;
+.about {
+	background-color: black;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	margin: 50px;
 }
-p{
-    text-align: left;
-    font-size: 20px;
+p {
+	text-align: left;
+	font-size: 20px;
 }
-.header{
-    background-color: #505050;
-}
-
-.contactUs{
-    background-color: #343434;
-    color:white;
+.header {
+	background-color: #505050;
 }
 
-.body{
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: small;
+.contactUs {
+	background-color: #343434;
+	color: white;
 }
 
-.linkedin{
-    height: 35px;
-    width: 35px;
+.body {
+	background-color: black;
+	font-family: 'Roboto', sans-serif;
+	font-size: small;
 }
-.github{
-    height: 50px;
-    width: 50px;
+
+.linkedin {
+	height: 35px;
+	width: 35px;
+}
+.github {
+	height: 50px;
+	width: 50px;
 }

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Nav from './components/Nav/Nav'
-import About from './components/About/About'
-import './App.css'
-import Info from './components/Info/Info'
-import Home from './components/Home/Home'
-import {Route} from 'react-router-dom'
+import Nav from './components/Nav/Nav';
+import About from './components/About/About';
+import './App.css';
+import Info from './components/Info/Info';
+import Home from './components/Home/Home';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      movies: [],
-    };
+			movies: [],
+		};
 	}
 
 	componentDidMount() {
@@ -19,13 +19,13 @@ class App extends Component {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-        this.setState({movies: [...res]});
+				this.setState({ movies: [...res] });
 			});
-  }
-  
-setNewMovies = (movies)=>{
-	this.setState({movies: movies});
-}
+	}
+
+	setNewMovies = (movies) => {
+		this.setState({ movies: movies });
+	};
 	render() {
 		return (
 			<div className='App'>

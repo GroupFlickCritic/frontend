@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Reviews from './Reviews'
-import Form from './Form'
+import Reviews from './Reviews';
+import Form from './Form';
 import { Image, Container } from 'react-bootstrap';
 import axios from 'axios';
-import './Info.css'
-
+import './Info.css';
 
 let url = `https://flick-critic-db.herokuapp.com/api/movies/`;
 class Info extends Component {
@@ -62,16 +61,10 @@ class Info extends Component {
 					</div>
 				);
 				this.setState({ movieInfo: display });
-
 			});
 	}
 	render() {
-		return (
-			<Container className='info'>
-				
-				{this.state.movieInfo}
-			</Container>
-		);
+		return <Container className='info'>{this.state.movieInfo}</Container>;
 	}
 }
 

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { ListGroup, Button, Row, Col } from 'react-bootstrap';
 import Moment from 'moment';
 import { Form as Input } from 'react-bootstrap';
-import './Item.css'
-import axios from 'axios'
+import './Item.css';
+import axios from 'axios';
 let url = 'https://flick-critic-db.herokuapp.com/api/reviews/';
 
 class Item extends Component {
@@ -23,8 +23,8 @@ class Item extends Component {
 		this.setState({ editClicked: false });
 	};
 
-	handleChange = (event) =>{
-        event.preventDefault();
+	handleChange = (event) => {
+		event.preventDefault();
 		this.setState({
 			updatedReview: {
 				review: `${event.target.value}`,
@@ -36,29 +36,28 @@ class Item extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
-		axios.put(url+this.props.id, this.state.updatedReview )
-			.then((res) => {
+		axios.put(url + this.props.id, this.state.updatedReview).then((res) => {
+			window.location.reload();
+		});
+	};
+
+	handleDelete = (event) => {
+		event.preventDefault();
+
+		let newMovie = this.props.movie;
+
+		//get the index
+		const index = newMovie.reviews.indexOf(this.props.id);
+		if (index > -1) {
+			newMovie.reviews.splice(index, 1);
+		}
+
+		axios
+			.delete(`${url}${this.props.id}/${this.props.movieId}`, newMovie)
+			.then(() => {
 				window.location.reload();
-            })
-            
-    };
-    
-    handleDelete = (event)=>{
-        event.preventDefault();
-
-        let newMovie = this.props.movie;
-
-				//get the index
-				const index = newMovie.reviews.indexOf(this.props.id);
-				if (index > -1) {
-					newMovie.reviews.splice(index, 1);
-				}
-				
-        axios.delete(`${url}${this.props.id}/${this.props.movieId}`, newMovie).then(()=>{
-            window.location.reload();
-        })
-    }
-	
+			});
+	};
 
 	editForm = () => {
 		return (
@@ -88,16 +87,12 @@ class Item extends Component {
 			</Input>
 		);
 	};
-	
-	
-
 
 	render() {
 		return this.state.editClicked ? (
 			<ListGroup.Item id='reviews'>
 				"{this.props.review}" <br />
 				{Moment(this.props.datePosted).add(1, 'days').format('L')}{' '}
-			
 				<span className='edit' onClick={this.handleEdit}>
 					edit
 				</span>{' '}
@@ -109,6 +104,6 @@ class Item extends Component {
 			this.editForm()
 		);
 	}
-		}
+}
 
 export default Item;

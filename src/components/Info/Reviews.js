@@ -24,7 +24,7 @@ class Reviews extends React.Component {
 			})
 			.then(() => {
 				this.state.movie.reviews.forEach((rev, index) => {
-					if(rev){
+					if (rev) {
 						fetch(url2 + rev)
 							.then((res) => {
 								return res.json();
@@ -33,12 +33,9 @@ class Reviews extends React.Component {
 								this.setState({ reviewList: [...this.state.reviewList, rev] });
 							});
 					}
-					
 				});
 			});
 	}
-
-	
 
 	handleChange = (event) => {
 		this.setState({ searchString: event.target.value });
@@ -49,22 +46,27 @@ class Reviews extends React.Component {
 		this.getData(this.state.searchString);
 	};
 
-	
 	render() {
 		let newRevs = this.state.reviewList.map((review, index) => {
-            if(review){
-                	return <Item key={index} review={review.review} datePosted={review.datePosted} id={review._id} movieId={this.state.movie._id} movie={this.state.movie}/>
-            }else{
-                return;
-            }
-		
-			
+			if (review) {
+				return (
+					<Item
+						key={index}
+						review={review.review}
+						datePosted={review.datePosted}
+						id={review._id}
+						movieId={this.state.movie._id}
+						movie={this.state.movie}
+					/>
+				);
+			} else {
+				return;
+			}
 		});
-        
-        
-        if(!newRevs){
-            return null;
-        }
+
+		if (!newRevs) {
+			return null;
+		}
 		return (
 			<Container id='reviews'>
 				<h4 className='reviews-head'>Critic Reviews</h4>

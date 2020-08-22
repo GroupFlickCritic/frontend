@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Container, CardColumns } from 'react-bootstrap';
-import './Home.css'
+import './Home.css';
 
 class Home extends Component {
-
 	render() {
 		let movies = this.props.movies.map((movie, index) => {
 			return (
@@ -20,8 +19,6 @@ class Home extends Component {
 						/>
 					</Card>
 				</Link>
-
-
 			);
 		});
 		return (
