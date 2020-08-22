@@ -21,21 +21,17 @@ HTML/CSS/JS/React/Node/MongoDB/Express/Bootstrap
 ### `Favorite Function:`
 ```javascript
 handleSubmit = (event) => {
-        event.preventDefault()
-        let newMovie = this.props.movie;
-        //pushing a new object of the new review and datePosted
-        newMovie.reviews.push(this.state);
-        axios.post(url, this.state).then((res)=>{
-        return res.data;
-        }).then((review)=>{
-            axios.put(`${url2}/${this.props.movie._id}/${review._id}`).then((res)=>{
-                window.location.reload();
-            })
-			
-		})
-    }
+        event.preventDefault();
+        console.log(this.props.movie._id)
+		//pushing a new object of the new review and datePosted
+		axios
+			.post(`${url}/${this.props.movie._id}`, this.state)
+			.then((res) => {
+				window.location.reload()
+			})
+	};
 ```
-When a user clicks on the submit button to submit a review, the handleSubmit method is invoked and in that method, We pass in the new review and the current date which the handleChange method stores in the state of  the Form component along with the current date. A post request is made with axios to the reviews endpoint to add a new review, when that request has been fulfilled, a put request is then made to the movies endpoint to add the id of the new review to the array of reviews of the current movie of which the user is making a review of. When all the request are fulfilled the page is then reloaded.
+When a user clicks on the submit button to submit a review, the handleSubmit method is invoked and in that method, We pass in the new review and the current date which the handleChange method stores in the state of  the Form component along with the current date. A post request is made with axios to the reviews endpoint to add a new review, when that request has been fulfilled, the page is then reloaded.
 
 ### `Roadmap:`
 - additional styling
