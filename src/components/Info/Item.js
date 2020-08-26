@@ -11,7 +11,6 @@ class Item extends Component {
 		super(props);
 		this.state = {
 			editClicked: true,
-
 			updatedReview: {
 				review: this.props.review,
 				datePosted: '',
@@ -37,24 +36,22 @@ class Item extends Component {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
 		axios.put(url + this.props.id, this.state.updatedReview).then((res) => {
+			//page currently reloading; plans to refactor for App to manage state
 			window.location.reload();
 		});
 	};
 
 	handleDelete = (event) => {
 		event.preventDefault();
-
 		let newMovie = this.props.movie;
-
-		//get the index
 		const index = newMovie.reviews.indexOf(this.props.id);
 		if (index > -1) {
 			newMovie.reviews.splice(index, 1);
 		}
-
 		axios
 			.delete(`${url}${this.props.id}/${this.props.movieId}`, newMovie)
 			.then(() => {
+				//page currently reloading; plans to refactor for App to manage state
 				window.location.reload();
 			});
 	};
@@ -90,7 +87,7 @@ class Item extends Component {
 
 	render() {
 		return this.state.editClicked ? (
-			<ListGroup.Item id='reviews'>
+			<ListGroup.Item className='reviews'>
 				"{this.props.review}" <br />
 				{Moment(this.props.datePosted).add(1, 'days').format('L')}{' '}
 				<span className='edit' onClick={this.handleEdit}>

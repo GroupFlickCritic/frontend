@@ -13,6 +13,7 @@ class Form extends React.Component {
 			datePosted: '',
 			review: '',
 			movie: this.props.movie._id,
+			
 		};
 	}
 
@@ -20,6 +21,7 @@ class Form extends React.Component {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
 		axios.post(`${url}/${this.props.movie._id}`, this.state).then((res) => {
+			//page currently reloading; plans to refactor for App to manage state
 			window.location.reload();
 		});
 	};

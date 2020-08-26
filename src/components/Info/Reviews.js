@@ -68,7 +68,7 @@ class Reviews extends React.Component {
 			return null;
 		}
 		return (
-			<Container id='reviews'>
+			<Container className='reviews'>
 				<h4 className='reviews-head'>Critic Reviews</h4>
 				<ListGroup variant='flush'>{newRevs}</ListGroup>
 			</Container>
