@@ -7,8 +7,8 @@ import Home from './components/Home/Home';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			movies: [],
 		};
@@ -38,12 +38,12 @@ class App extends Component {
 						return <Home movies={this.state.movies} />;
 					}}
 				/>
+
 				<Route
 					path='/about'
-					render={() => {
-						return <About />;
-					}}
-				/>
+					component= {About}
+					/>
+				
 				<Route
 					path='/info/:movie'
 					render={(routerProps) => {

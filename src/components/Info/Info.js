@@ -7,8 +7,8 @@ import './Info.css';
 
 let url = `https://flick-critic-db.herokuapp.com/api/movies/`;
 class Info extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			movieInfo: null,
 		};
@@ -17,6 +17,15 @@ class Info extends Component {
 		axios(url + this.props.match.params.movie)
 			.then((res) => res.data[0])
 			.then((movie) => {
+				let movieInfo = movie.movieInfo
+				let {
+					summary,
+					director,
+					writers,
+					genres,
+					rated,
+					releaseDate,
+				} = movieInfo
 				let display = (
 					<div id='allInfo'>
 						<div className='top-contents'>
@@ -26,25 +35,25 @@ class Info extends Component {
 									{movie.title}
 								</h3>
 								<h6 className='detail'>Summary:</h6>
-								<p>{movie.movieInfo.summary}</p>
+								<p>{summary}</p>
 								<p>
 									<span className='detail'>Director:</span>{' '}
-									{movie.movieInfo.director}{' '}
+									{director}{' '}
 								</p>
 								<p>
 									<span className='detail'>Writers:</span>{' '}
-									{movie.movieInfo.writers}{' '}
+									{writers}{' '}
 								</p>
 								<p>
 									<span className='detail'>Genres:</span>{' '}
-									{movie.movieInfo.genres}{' '}
+									{genres}{' '}
 								</p>
 								<p>
-									<span className='detail'>Rated:</span> {movie.movieInfo.rated}{' '}
+									<span className='detail'>Rated:</span> {rated}{' '}
 								</p>
 								<p>
 									<span className='detail'>Release Date:</span>{' '}
-									{movie.movieInfo.releaseDate}{' '}
+									{releaseDate}{' '}
 								</p>
 							</div>
 						</div>

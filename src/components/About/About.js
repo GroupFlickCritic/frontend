@@ -4,14 +4,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './About.css';
 
 function About() {
-	function handleOnClick(e) {
-		e.preventDefault();
-	}
-
+	const members = [
+		{
+			name: 'Jason Choi',
+			githubLink: 'https://github.com/Choiboi500',
+			linkedInLink: 'https://www.linkedin.com/in/jason-choi-347855b4/',
+		},
+		{
+			name: 'Alisha Lawani',
+			githubLink: 'https://github.com/alishalawani',
+			linkedInLink: 'https://www.linkedin.com/in/alishalawani/',
+		},
+		{
+			name: 'David Sams',
+			githubLink: 'https://github.com/davidedsams',
+			linkedInLink: 'https://www.linkedin.com/in/davidedwardsams',
+		},
+		{
+			name: 'Roshonia Brooks',
+			githubLink: 'https://github.com/RoshoniaB',
+			linkedInLink: 'https://www.linkedin.com/in/roshonia-brooks',
+		}
+	]
 	return (
 		<Jumbotron className='about'>
 			<h1>MEET OUR TEAM</h1>
-			<p>
+			<p className="aboutBody">
 				We all are very different. We come from different backgrounds. We were
 				born in different cities, at a different time. We have different
 				hobbies, and interests. Although we may be different, what connects us
@@ -24,7 +42,6 @@ function About() {
 				<Card className='card'>
 					<Card.Header className='header'>
 						<Accordion.Toggle
-							onClick={handleOnClick}
 							variant='link'
 							eventKey='0'
 							className='contactUs'>
@@ -35,66 +52,23 @@ function About() {
 						<Card.Body className='body'>
 							<CardImg fluid src='/images/groupPic.png' alt='GroupPic' />
 							<h6>(clockwise order)</h6>
-							<div className='groupInfo'>
-								<h3>Jason Choi</h3>
+							{members.map((member)=>{
+								return(<div className='groupInfo'>
+								<h3>{member.name}</h3>
 								<a
-									href='https://github.com/Choiboi500'
+									href={member.githubLink}
 									rel='noopener noreferrer'
 									target='_blank'>
 									<CardImg className='github' src='images/github.png' />
 								</a>
 								<a
-									href='https://www.linkedin.com/in/jason-choi-347855b4/'
+									href={member.linkedInLink}
 									rel='noopener noreferrer'
 									target='_blank'>
 									<CardImg className='linkedin' src='images/linkedin.jpg' />
 								</a>
-							</div>
-							<div class='groupInfo'>
-								<h3>Alisha Lawani</h3>
-								<a
-									href='https://github.com/alishalawani'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='github' src='images/github.png' />
-								</a>
-								<a
-									href='https://www.linkedin.com/in/alishalawani/'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='linkedin' src='images/linkedin.jpg' />
-								</a>
-							</div>
-							<div class='groupInfo'>
-								<h3>David Sams</h3>
-								<a
-									href='https://github.com/davidedsams'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='github' src='images/github.png' />
-								</a>
-								<a
-									href='https://www.linkedin.com/in/davidedwardsams'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='linkedin' src='images/linkedin.jpg' />
-								</a>
-							</div>
-							<div class='groupInfo'>
-								<h3>Roshonia Brooks</h3>
-								<a
-									href='https://github.com/RoshoniaB'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='github' src='images/github.png' />
-								</a>
-								<a
-									href='https://www.linkedin.com/in/roshonia-brooks'
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='linkedin' src='images/linkedin.jpg' />
-								</a>
-							</div>
+							</div>)
+							})}
 						</Card.Body>
 					</Accordion.Collapse>
 				</Card>

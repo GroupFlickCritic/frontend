@@ -7,8 +7,8 @@ import './Info.css';
 import axios from 'axios';
 let url = `https://flick-critic-db.herokuapp.com/api/reviews`;
 class Form extends React.Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			datePosted: '',
 			review: '',
@@ -18,7 +18,6 @@ class Form extends React.Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(this.props.movie._id);
 		//pushing a new object of the new review and datePosted
 		axios.post(`${url}/${this.props.movie._id}`, this.state).then((res) => {
 			window.location.reload();

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Nav.css';
-import Navbar from 'react-bootstrap/Navbar';
-import { Nav as ReactNav } from 'react-bootstrap';
+
+import { Nav as ReactNav, Navbar } from 'react-bootstrap';
 
 class Nav extends Component {
 	render() {
