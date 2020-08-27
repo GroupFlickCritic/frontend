@@ -48,8 +48,7 @@ class Reviews extends React.Component {
 
 	render() {
 		let newRevs = this.state.reviewList.map((review, index) => {
-			if (review) {
-				return (
+				return review ? (
 					<Item
 						key={index}
 						review={review.review}
@@ -58,10 +57,7 @@ class Reviews extends React.Component {
 						movieId={this.state.movie._id}
 						movie={this.state.movie}
 					/>
-				);
-			} else {
-				return;
-			}
+				) : undefined
 		});
 
 		if (!newRevs) {

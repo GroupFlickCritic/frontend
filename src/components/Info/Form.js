@@ -7,8 +7,8 @@ import './Info.css';
 import axios from 'axios';
 let url = `https://flick-critic-db.herokuapp.com/api/reviews`;
 class Form extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			datePosted: '',
 			review: '',
