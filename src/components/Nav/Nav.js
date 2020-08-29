@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Nav.css';
 
 import { Nav as ReactNav, Navbar } from 'react-bootstrap';
 
-class Nav extends Component {
-	render() {
+ function Nav (){
+	
 		return (
 			<Navbar className='navbar' expand='sm'>
 				<Navbar.Brand id='title' href='/'>
@@ -22,8 +22,7 @@ class Nav extends Component {
 					</ReactNav>
 				</Navbar.Collapse>
 			</Navbar>
-		);
-	}
+		)
 }
 
 export default Nav;

@@ -5,7 +5,7 @@ import './App.css';
 import Info from './components/Info/Info';
 import Home from './components/Home/Home';
 import { Route } from 'react-router-dom';
-
+import axios from 'axios';
 class App extends Component {
 	constructor() {
 		super();
@@ -16,8 +16,8 @@ class App extends Component {
 
 	componentDidMount() {
 		const url = `https://flick-critic-db.herokuapp.com/api/movies`;
-		fetch(url)
-			.then((res) => res.json())
+		axios(url)
+			.then((res) => res.data)
 			.then((res) => {
 				this.setState({ movies: [...res] });
 			});
