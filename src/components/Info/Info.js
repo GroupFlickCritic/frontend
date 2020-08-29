@@ -35,26 +35,17 @@ class Info extends Component {
 									{movie.title}
 								</h3>
 								<h6 className='detail'>Summary:</h6>
-								<p>{summary}</p>
-								<p>
-									<span className='detail'>Director:</span>{' '}
-									{director}{' '}
-								</p>
-								<p>
-									<span className='detail'>Writers:</span>{' '}
-									{writers}{' '}
-								</p>
-								<p>
-									<span className='detail'>Genres:</span>{' '}
-									{genres}{' '}
-								</p>
-								<p>
-									<span className='detail'>Rated:</span> {rated}{' '}
-								</p>
-								<p>
-									<span className='detail'>Release Date:</span>{' '}
-									{releaseDate}{' '}
-								</p>
+								<span>{summary}</span><br />
+								<span className='detail'>Director:</span>{' '}
+								{director}<br />
+								<span className='detail'>Writers:</span>{' '}
+								{writers}<br />
+								<span className='detail'>Genres:</span>{' '}
+								{genres}<br />
+								<span className='detail'>Rated:</span>{' '}
+								{rated}<br />
+								<span className='detail'>Release Date:</span>{' '}
+								{releaseDate}<br />
 							</div>
 						</div>
 						<div className='bottom-contents'>
