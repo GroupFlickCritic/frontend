@@ -35,7 +35,7 @@ class Form extends React.Component {
 
 	render() {
 		return (
-			<Input onSubmit={this.handleSubmit} id='form'>
+			<Input onSubmit={this.handleSubmit} className='the-form'>
 				<Input.Group className='form'>
 					<Input.Control
 						id='input'

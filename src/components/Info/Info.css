@@ -24,9 +24,8 @@
 	text-align: left;
 	width: 50%;
 }
-
-#form {
-	width: 500px;
+.new-review{
+	width: 100%;
 }
 
 .info {
