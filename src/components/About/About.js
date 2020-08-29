@@ -7,8 +7,8 @@ function About() {
 	const members = [
 		{
 			name: 'Jason Choi',
-			githubLink: 'https://github.com/Choiboi500',
-			linkedInLink: 'https://www.linkedin.com/in/jason-choi-347855b4/',
+			githubLink: 'https://github.com/jasonbchoi',
+			linkedInLink: 'https://www.linkedin.com/in/jasonbchoi/',
 		},
 		{
 			name: 'Alisha Lawani',
@@ -52,22 +52,22 @@ function About() {
 						<Card.Body className='body'>
 							<CardImg fluid src='/images/groupPic.png' alt='GroupPic' />
 							<h6>(clockwise order)</h6>
-							{members.map((member)=>{
-								return(<div className='groupInfo'>
-								<h3>{member.name}</h3>
-								<a
-									href={member.githubLink}
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='github' src='images/github.png' />
-								</a>
-								<a
-									href={member.linkedInLink}
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='linkedin' src='images/linkedin.jpg' />
-								</a>
-							</div>)
+							{members.map((member) => {
+								return (<div className='groupInfo'>
+									<h3>{member.name}</h3>
+									<a
+										href={member.githubLink}
+										rel='noopener noreferrer'
+										target='_blank'>
+										<CardImg className='github' src='images/github.png' />
+									</a>
+									<a
+										href={member.linkedInLink}
+										rel='noopener noreferrer'
+										target='_blank'>
+										<CardImg className='linkedin' src='images/linkedin.jpg' />
+									</a>
+								</div>)
 							})}
 						</Card.Body>
 					</Accordion.Collapse>
