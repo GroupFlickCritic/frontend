@@ -7,8 +7,8 @@ function About() {
 	const members = [
 		{
 			name: 'Jason Choi',
-			githubLink: 'https://github.com/Choiboi500',
-			linkedInLink: 'https://www.linkedin.com/in/jason-choi-347855b4/',
+			githubLink: 'https://github.com/jasonbchoi',
+			linkedInLink: 'https://www.linkedin.com/in/jasonbchoi',
 		},
 		{
 			name: 'Alisha Lawani',
