@@ -4,7 +4,8 @@ import Moment from 'moment';
 import { Form as Input } from 'react-bootstrap';
 import './Item.css';
 import axios from 'axios';
-let url = 'https://flick-critic-db.herokuapp.com/api/movies/';
+let url = 'https://flick-critic-db.herokuapp.com/api/reviews/';
+let url2 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 
 class Item extends Component {
 	constructor(props) {
@@ -35,7 +36,7 @@ class Item extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
-		axios.put(url + this.props.id, this.state.updatedReview).then((res) => {
+		axios.put(`${url}${this.props.movieId}/${this.props.id}/${this.props.index}`, this.state.updatedReview).then((res) => {
 			//page currently reloading; plans to refactor for App to manage state
 			window.location.reload();
 		});
@@ -49,7 +50,7 @@ class Item extends Component {
 			newMovie.reviews.splice(index, 1);
 		}
 		axios
-			.delete(`${url}${this.props.movieId}/${this.props.index}/${this.props.id}`, newMovie)
+			.delete(`${url2}${this.props.movieId}/${this.props.index}/${this.props.id}`, newMovie)
 			.then(() => {
 				//page currently reloading; plans to refactor for App to manage state
 				window.location.reload();
