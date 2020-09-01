@@ -86,7 +86,6 @@ class Item extends Component {
 	};
 
 	render() {
-		console.log(this.props.review)
 		return this.state.editClicked ? (
 			<ListGroup.Item className='reviews'>
 				"{this.props.review}" <br />

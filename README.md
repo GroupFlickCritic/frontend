@@ -22,7 +22,6 @@ HTML/CSS/JS/React/Node/MongoDB/Express/Bootstrap
 ```javascript
 handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.props.movie._id)
 		//pushing a new object of the new review and datePosted
 		axios
 			.post(`${url}/${this.props.movie._id}`, this.state)

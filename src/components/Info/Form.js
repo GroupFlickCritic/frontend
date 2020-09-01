@@ -19,8 +19,6 @@ class Form extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		//pushing a new object of the new review and datePosted
-		console.log(this.props.movie._id)
-		console.log(this.state)
 		axios.post(`${url}/${this.props.movie._id}`, this.state).then((res) => {
 			//page currently reloading; plans to refactor for App to manage state
 			window.location.reload();
