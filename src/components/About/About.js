@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Card, Jumbotron, CardImg } from 'react-bootstrap';
+import { Accordion, Card, Jumbotron, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './About.css';
 
@@ -29,7 +29,7 @@ function About() {
 	return (
 		<Jumbotron className='about'>
 			<h1>MEET OUR TEAM</h1>
-			<p className="aboutBody">
+			<p className='aboutBody'>
 				We all are very different. We come from different backgrounds. We were
 				born in different cities, at a different time. We have different
 				hobbies, and interests. Although we may be different, what connects us
@@ -41,33 +41,37 @@ function About() {
 			<Accordion defaultActiveKey='1'>
 				<Card className='card'>
 					<Card.Header className='header'>
-						<Accordion.Toggle
-							variant='link'
-							eventKey='0'
-							className='contactUs'>
+						<Accordion.Toggle variant='link' eventKey='0' className='contactUs'>
 							CONTACT US
 						</Accordion.Toggle>
 					</Card.Header>
 					<Accordion.Collapse eventKey='0'>
 						<Card.Body className='body'>
-							<CardImg fluid src='/images/groupPic.png' alt='GroupPic' />
+							<Image
+								fluid
+								src='/images/groupPic.png'
+								alt='GroupPic'
+								className='body'
+							/>
 							<h6>(clockwise order)</h6>
-							{members.map((member)=>{
-								return(<div className='groupInfo'>
-								<h3>{member.name}</h3>
-								<a
-									href={member.githubLink}
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='github' src='images/github.png' />
-								</a>
-								<a
-									href={member.linkedInLink}
-									rel='noopener noreferrer'
-									target='_blank'>
-									<CardImg className='linkedin' src='images/linkedin.jpg' />
-								</a>
-							</div>)
+							{members.map((member, index) => {
+								return (
+									<div className='groupInfo' key={index}>
+										<h3>{member.name}</h3>
+										<a
+											href={member.githubLink}
+											rel='noopener noreferrer'
+											target='_blank'>
+											<Image className='github' src='images/github.png' />
+										</a>
+										<a
+											href={member.linkedInLink}
+											rel='noopener noreferrer'
+											target='_blank'>
+											<Image className='linkedin' src='images/linkedin.jpg' />
+										</a>
+									</div>
+								);
 							})}
 						</Card.Body>
 					</Accordion.Collapse>
