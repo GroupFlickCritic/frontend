@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Reviews from './Reviews';
 import Form from './Form';
 import { Image, Container } from 'react-bootstrap';
@@ -6,15 +6,11 @@ import axios from 'axios';
 import './Info.css';
 
 let url = `https://flick-critic-db.herokuapp.com/api/movies/`;
-class Info extends Component {
-	constructor() {
-		super();
-		this.state = {
-			movieInfo: null,
-		};
-	}
-	componentDidMount() {
-		axios(url + this.props.match.params.movie)
+function Info(props) {
+	const [movieInfoState, setMovieInfoState] = useState(null);
+
+	useEffect(() => {
+		axios(url + props.match.params.movie)
 			.then((res) => res.data[0])
 			.then((movie) => {
 				let movieInfo = movie.movieInfo
@@ -53,19 +49,18 @@ class Info extends Component {
 							<div className='new-review'>
 								<Form
 									title={movie.title}
-									setNewMovies={this.props.setNewMovies}
+									setNewMovies={props.setNewMovies}
 									movie={movie}
 								/>
 							</div>
 						</div>
 					</div>
 				);
-				this.setState({ movieInfo: display });
+				setMovieInfoState(display);
 			});
-	}
-	render() {
-		return <Container className='info'>{this.state.movieInfo}</Container>;
-	}
+	}, [props.match.params.movie, props.setNewMovies])
+
+	return <Container className='info'>{movieInfoState}</Container>;
 }
 
 export default Info;
