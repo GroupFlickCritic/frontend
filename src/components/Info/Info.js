@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import Reviews from './Reviews';
 import Form from './Form';
 import { Image, Container } from 'react-bootstrap';
@@ -60,7 +60,7 @@ function Info(props) {
 			});
 	}, [props.match.params.movie, props.setNewMovies])
 
-	return <Container className='info'>{movieInfoState}</Container>;
+	return <Container className='info-container'>{movieInfoState}</Container>;
 }
 
 export default Info;
