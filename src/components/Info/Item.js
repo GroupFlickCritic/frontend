@@ -13,16 +13,7 @@ function Item(props){
 		review: props.review,
 		datePosted: ''
 	})
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		editClicked: true,
-	// 		updatedReview: {
-	// 			review: this.props.review,
-	// 			datePosted: '',
-	// 		},
-	// 	};
-	// }
+	
 	const handleEdit = (event) => {
 		event.preventDefault();
 		setEditClick(false);
@@ -38,10 +29,9 @@ function Item(props){
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		//pushing a new object of the new review and datePosted
+		setEditClick(true)
 		axios.put(`${url}${props.movieId}/${props.id}/${props.index}`, updatedReview).then((res) => {
-			//page currently reloading; plans to refactor for App to manage state
-			window.location.reload();
+			props.fetchReviews()
 		});
 	};
 
@@ -55,8 +45,7 @@ function Item(props){
 		axios
 			.delete(`${url2}${props.movieId}/${props.index}/${props.id}`, newMovie)
 			.then(() => {
-				//page currently reloading; plans to refactor for App to manage state
-				window.location.reload();
+				props.fetchReviews()
 			});
 	};
 
@@ -74,7 +63,7 @@ function Item(props){
 								name='searchString'
 								required
 								onChange={handleChange}
-								value={this.state.updatedReview.review}
+								value={updatedReview.review}
 								rows='1'
 							/>
 						</Input.Group>
@@ -89,19 +78,19 @@ function Item(props){
 		);
 	};
 
-		return this.state.editClicked ? (
+		return editClick ? (
 			<ListGroup.Item className='reviews'>
-				"{this.props.review}" <br />
-				{Moment(this.props.datePosted).add(1, 'days').format('L')}{' '}
-				<span className='edit' onClick={this.handleEdit}>
+				"{props.review}" <br />
+				{Moment(props.datePosted).add(1, 'days').format('L')}{' '}
+				<span className='edit' onClick={handleEdit}>
 					edit
 				</span>{' '}
-				<span className='delete' onClick={this.handleDelete}>
+				<span className='delete' onClick={handleDelete}>
 					delete
 				</span>
 			</ListGroup.Item>
 		) : (
-			this.editForm()
+			editForm()
 		);
 	
 }
