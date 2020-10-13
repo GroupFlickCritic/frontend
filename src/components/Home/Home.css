@@ -5,4 +5,22 @@
 
 .info {
 	height: 327px;
+	/* width: 214px; */
+}
+
+@media (max-width: 769px) {
+    .card-columns {
+        -webkit-column-count:2;
+        -moz-column-count:2;
+        column-count:2;
+    }
+}
+
+@media (min-width: 991px) {
+    .info{
+		width:214px;
+	}
+	.card{
+		width:216px !important;
+	}
 }
