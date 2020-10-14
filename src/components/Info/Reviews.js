@@ -3,24 +3,12 @@ import { ListGroup, Container } from 'react-bootstrap';
 import Item from './Item';
 import './Reviews.css';
 import axios from 'axios';
-const url1 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 
-function Reviews(props) {
-	const [movie, setMovie] = useState('');
+function Reviews({ title, movie, fetchMovies }) {
 	const [reviewList, setReviewList] = useState([]);
 	const [editClicked, setEditClicked] = useState(true);
-	function fetchReviews() {
-		axios(url1 + props.title)
-			.then((res) => {
-				return res.data;
-			})
-			.then((res) => {
-				setMovie(res[0]);
-			});
-	}
 
-	useEffect(fetchReviews
-	,[]);
+	useEffect(fetchMovies, []);
 
 	let newRevs = '';
 	if (movie) {
@@ -34,7 +22,7 @@ function Reviews(props) {
 					index={index}
 					movieId={movie._id}
 					movie={movie}
-					fetchReviews={fetchReviews}
+					fetchMovies={fetchMovies}
 				/>
 			) : undefined;
 		});

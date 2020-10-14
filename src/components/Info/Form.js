@@ -21,8 +21,8 @@ function Form(props) {
 				movie: movie,
 			})
 			.then((res) => {
-				//page currently reloading; plans to refactor for App to manage state
-				window.location.reload();
+				props.fetchMovies()
+				setReview('')
 			});
 	};
 

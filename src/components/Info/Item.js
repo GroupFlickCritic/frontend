@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, { Component, useState } from 'react';
 import { ListGroup, Button, Row, Col } from 'react-bootstrap';
 import Moment from 'moment';
 import { Form as Input } from 'react-bootstrap';
@@ -7,13 +7,13 @@ import axios from 'axios';
 let url = 'https://flick-critic-db.herokuapp.com/api/reviews/';
 let url2 = 'https://flick-critic-db.herokuapp.com/api/movies/';
 
-function Item(props){
-	const [editClick, setEditClick] = useState(true)
+function Item(props) {
+	const [editClick, setEditClick] = useState(true);
 	const [updatedReview, setUpdatedReview] = useState({
 		review: props.review,
-		datePosted: ''
-	})
-	
+		datePosted: '',
+	});
+
 	const handleEdit = (event) => {
 		event.preventDefault();
 		setEditClick(false);
@@ -22,17 +22,19 @@ function Item(props){
 	const handleChange = (event) => {
 		event.preventDefault();
 		setUpdatedReview({
-				review: `${event.target.value}`,
-				datePosted: new Date(),
+			review: `${event.target.value}`,
+			datePosted: new Date(),
 		});
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setEditClick(true)
-		axios.put(`${url}${props.movieId}/${props.id}/${props.index}`, updatedReview).then((res) => {
-			props.fetchReviews()
-		});
+		setEditClick(true);
+		axios
+			.put(`${url}${props.movieId}/${props.id}/${props.index}`, updatedReview)
+			.then(() => {
+				props.fetchMovies();
+			});
 	};
 
 	const handleDelete = (event) => {
@@ -45,7 +47,7 @@ function Item(props){
 		axios
 			.delete(`${url2}${props.movieId}/${props.index}/${props.id}`, newMovie)
 			.then(() => {
-				props.fetchReviews()
+				props.fetchMovies();
 			});
 	};
 
@@ -78,21 +80,20 @@ function Item(props){
 		);
 	};
 
-		return editClick ? (
-			<ListGroup.Item className='reviews'>
-				"{props.review}" <br />
-				{Moment(props.datePosted).add(1, 'days').format('L')}{' '}
-				<span className='edit' onClick={handleEdit}>
-					edit
-				</span>{' '}
-				<span className='delete' onClick={handleDelete}>
-					delete
-				</span>
-			</ListGroup.Item>
-		) : (
-			editForm()
-		);
-	
+	return editClick ? (
+		<ListGroup.Item className='reviews'>
+			"{props.review}" <br />
+			{Moment(props.datePosted).add(1, 'days').format('L')}{' '}
+			<span className='edit' onClick={handleEdit}>
+				edit
+			</span>{' '}
+			<span className='delete' onClick={handleDelete}>
+				delete
+			</span>
+		</ListGroup.Item>
+	) : (
+		editForm()
+	);
 }
 
 export default Item;
