@@ -20,17 +20,21 @@ HTML/CSS/JS/React/Node/MongoDB/Express/Bootstrap
 
 ### `Favorite Function:`
 ```javascript
-handleSubmit = (event) => {
-        event.preventDefault();
-		//pushing a new object of the new review and datePosted
+	const handleSubmit = (event) => {
+		event.preventDefault();
 		axios
-			.post(`${url}/${this.props.movie._id}`, this.state)
-			.then((res) => {
-				window.location.reload()
+			.post(`${url}/${movie}`, {
+				review: review,
+				datePosted: datePosted,
+				movie: movie,
 			})
+			.then((res) => {
+				props.fetchMovies()
+				setReview('')
+			});
 	};
 ```
-When a user clicks on the submit button to submit a review, the handleSubmit method is invoked and in that method, We pass in the new review and the current date which the handleChange method stores in the state of  the Form component along with the current date. A post request is made with axios to the reviews endpoint to add a new review, when that request has been fulfilled, the page is then reloaded.
+When a user clicks on the submit button to submit a review, the handleSubmit method is invoked and in that method, We pass in the new review and the current date which the handleChange method stores in the state of  the Form component along with the current date. A post request is made with axios to the reviews endpoint to add a new review, when that request has been fulfilled, the reviews get fetched and then review state is set to an empty string.
 
 ### `Roadmap:`
 - additional styling
