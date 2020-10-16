@@ -13,7 +13,6 @@ function Form(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		//pushing a new object of the new review and datePosted
 		axios
 			.post(`${url}/${movie}`, {
 				review: review,
